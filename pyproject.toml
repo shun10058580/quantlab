@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "quantlab"
+version = "0.1.0"
+description = "Python 量化研究/回测/模拟交易工具箱：数据生成、策略、回测引擎、绩效指标、纸面模拟"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "quantlab" }]
+keywords = ["quant", "backtest", "strategy", "pandas", "numpy", "futures", "ctp"]
+dependencies = [
+    "numpy>=1.24",
+    "pandas>=2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+]
+# 可选：回测提速 / 可视化 / vnpy 实盘适配（按需安装）
+vectorbt = ["vectorbt>=0.27"]
+plot = ["matplotlib>=3.7"]
+vnpy = ["vnpy>=3.9", "vnpy_ctastrategy>=1.0"]
+
+[project.scripts]
+quantlab = "quantlab.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["quantlab*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

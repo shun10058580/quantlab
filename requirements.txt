@@ -1,0 +1,12 @@
+# 核心依赖
+numpy>=1.24
+pandas>=2.0
+
+# 开发 / 测试
+pytest>=7.0
+
+# ---- 按需可选 ----
+# vectorbt>=0.27        # 高性能向量化回测
+# matplotlib>=3.7       # 画净值曲线
+# vnpy>=3.9             # CTP 实盘网关
+# vnpy_ctastrategy>=1.0 # vnpy 策略模板
